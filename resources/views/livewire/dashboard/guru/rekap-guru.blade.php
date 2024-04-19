@@ -26,6 +26,25 @@
                         <div class="row">
                             {{-- Month --}}
 
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="input-group date" id="datetimepicker11" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker11"/>
+                                        <div class="input-group-append" data-target="#datetimepicker11" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                $(function () {
+                                    $('#datetimepicker11').datetimepicker({
+                                        viewMode: 'years',
+                                        format: 'MM/YYYY'
+                                    });
+                                });
+                            </script>
+
                             <div class="col-md-2 col-sm-12">
                                 <div class="form-group">
                                     {{-- <label for="exampleFormControlSelect1">Kelas</label> --}}
