@@ -14,9 +14,9 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{ url("admin/") }}">
+        <a class="nav-link" href="{{ url("guru/") }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>Dashboard Guru</span></a>
     </li>
 
     <!-- Divider -->
@@ -37,7 +37,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Siswa:</h6>
-                <a class="collapse-item" href="{{ url("/daftar_siswa") }}">Daftar Siswa</a>
+                {{-- <a class="collapse-item" href="{{ url("/daftar_siswa") }}">Daftar Siswa</a> --}}
                 <a class="collapse-item" href="{{ url("/presensi_siswa") }}">Presensi</a>
                 <a class="collapse-item" href="cards.html">Rekap Presesnsi</a>
             </div>
@@ -54,14 +54,14 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Guru:</h6>
-                <a class="collapse-item" href="buttons.html">Daftar Guru</a>
+                {{-- <a class="collapse-item" href="buttons.html">Daftar Guru</a> --}}
                 <a class="collapse-item" href="cards.html">Presensi</a>
                 <a class="collapse-item" href="cards.html">Rekap Presensi</a>
             </div>
         </div>
     </li>
 
-    <!-- Nav Item - Staf TU Collapse Menu -->
+    {{-- <!-- Nav Item - Staf TU Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
             aria-expanded="true" aria-controls="collapseFour">
@@ -76,10 +76,10 @@
                 <a class="collapse-item" href="cards.html">Rekap Presensi</a>
             </div>
         </div>
-    </li>
+    </li> --}}
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
@@ -95,7 +95,7 @@
                 <a class="collapse-item" href="utilities-other.html">Other</a>
             </div>
         </div>
-    </li>
+    </li> --}}
 
     
 

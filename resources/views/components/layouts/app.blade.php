@@ -26,20 +26,16 @@
     <title>{{ $title ?? 'Sistem Presensi' }}</title>
     <!-- Custom fonts for this template-->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />
-
-
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/sb-admin-2.css') }}" rel="stylesheet">
 
     <!-- icon web -->
-    <link rel="icon" href="assets/logo/logo.png" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/logo/logo.png') }}" type="image/x-icon">
 
     {{-- table icon --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
@@ -53,8 +49,23 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
-    {{-- Date --}}
 
+    {{-- Date --}}
+    {{-- <link rel="stylesheet" href="assets/css/datepicker.css">
+    <script src="assets/js/bootstrap-datepicker"></script>
+
+    <script>
+
+        $(function() {
+
+        $('.dates #usr1').datepicker({
+            'format': 'yyyy-mm',
+            'autoclose': true
+        });
+
+
+    });
+        </script> --}}
 
 
 
@@ -74,29 +85,31 @@
 
 
 <!-- Bootstrap core JavaScript-->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 
 <!-- Core plugin JavaScript-->
-<script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="{{ asset('assets/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="assets/js/sb-admin-2.min.js"></script>
+<script src="{{ asset('assets/js/sb-admin-2.min.js') }}"></script>
 
 <!-- Page level plugins -->
-<script src="assets/vendor/chart.js/Chart.min.js"></script>
+<script src="{{ asset('assets/vendor/chart.js/Chart.min.js') }}"></script>
 
 <!-- Page level custom scripts -->
-<script src="assets/js/demo/chart-area-demo.js"></script>
-<script src="assets/js/demo/chart-pie-demo.js"></script>
+<script src="{{ asset('assets/js/demo/chart-area-demo.js') }}"></script>
+<script src="{{ asset('assets/js/demo/chart-pie-demo.js') }}"></script>
 
 <!-- Page level plugins -->
-<script src="assets/vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="{{ asset('assets/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
 <!-- Page level custom scripts -->
-<script src="assets/js/demo/datatables-demo.js"></script>
+<script src="{{ asset('assets/js/demo/datatables-demo.js') }}"></script>
+
+
 
 
 </body>

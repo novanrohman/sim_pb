@@ -8,14 +8,14 @@
         <!-- Page Wrapper -->
         <div id="wrapper">
 
-            @include('livewire.dashboard.component.nav')
+            @include('livewire.dashboard-guru.component.nav')
 
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
 
                 <!-- Main Content -->
                 <div id="content">
-                    @include('livewire.dashboard.component.topbar')
+                    @include('livewire.dashboard-guru.component.topbar')
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
@@ -24,29 +24,12 @@
                         <h1 class="h3 mb-2 text-gray-800">Rekap Guru</h1>
                         <p>{{ date('M Y') }}</p>
                         <div class="row">
-                            {{-- Month --}}
-                            
-                            
-
-                           <!-- <div class="col-md-2 col-sm-12">
-                                <div class="form-group">
-                                    {{-- <label for="exampleFormControlSelect1">Kelas</label> --}}
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option selected disabled class="font-weight-bold">Bulan</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            {{-- End Month --}}
-                            <div class="col-md-2">
-                                <a name="" id="" class="btn btn-primary" href="#"
-                                    role="button">Pilih</a>
-                            </div>
-                        </div>-->
+                            {{-- Month Filter --}}
+                            {{-- ==================
+                                ===================
+                                ===================
+                                 --}}
+                        </div>
 
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
@@ -103,3 +86,4 @@
             </div>
         </div>
 </div>
+

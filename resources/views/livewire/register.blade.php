@@ -3,7 +3,7 @@
         Register - Sistem Presensi
     @endslot
 
-    <body  class="bg-gradient-primary">
+    <body class="bg-gradient-primary">
         <div class="container">
 
             <div class="card o-hidden border-0 shadow-lg my-5">
@@ -16,52 +16,62 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Buat Akun!</h1>
                                 </div>
-                                <form class="user">
+                                <form class="user" wire:submit='storeUser'>
                                     @csrf
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="text" class="form-control form-control-user" id="namaDepan"
-                                                placeholder="Nama Depan">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-user" id="namaBelakang"
-                                                placeholder="Nama Belakang">
-                                        </div>
+                                    <div class="form-group">
+                                        <input wire:model='nama_pegawai' type="text" class="form-control form-control-user"
+                                            id="namaDepan" placeholder="Nama Lengkap">
+                                        @error('nama_pegawai')
+                                            <small class="d-block mt-1 text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="nisn"
-                                            placeholder="NISN">
+                                        <input wire:model='nip' type="text" class="form-control form-control-user"
+                                            id="nisn" placeholder="NIS">
+                                        @error('nip')
+                                            <small class="d-block mt-1 text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-user" id="email"
-                                            placeholder="Alamat Email">
+                                        <input wire:model='email_pegawai' type="email" class="form-control form-control-user"
+                                            id="email" placeholder="Alamat Email">
+                                        @error('email_pegawai')
+                                            <small class="d-block mt-1 text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="pasword" placeholder="Kata Sandi">
+                                            <input wire:model='password' type="password"
+                                                class="form-control form-control-user" id="pasword"
+                                                placeholder="Kata Sandi">
+                                            @error('password')
+                                                <small class="d-block mt-1 text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                         <div class="col-sm-6">
                                             <input type="password" class="form-control form-control-user"
                                                 id="ulangiPasword" placeholder="Ulangi Kata Sandi">
+                                            @error('password')
+                                                <small class="d-block mt-1 text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
-                                    <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
                                         Buat Akun
-                                    </a>
+                                    </button>
                                 </form>
                                 <hr>
                                 <div class="text-center">
                                     <a class="small" href="forgot-password.html">Lupa Pasword?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="{{ url("/login") }}">Sudah punya akun? Login!</a>
+                                    <a class="small" href="{{ url('/') }}">Sudah punya akun? Login!</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-    
+
         </div>
 </div>

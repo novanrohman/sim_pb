@@ -1,6 +1,6 @@
 <div>
     @slot('title')
-        Guru - Sistem Presensi
+        {{ $title }}
     @endslot
 
     <body id="page-top">
@@ -8,27 +8,50 @@
         <!-- Page Wrapper -->
         <div id="wrapper">
 
-            @include('livewire.dashboard.component.nav')
+            @include('livewire.dashboard-guru.component.nav')
 
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
 
                 <!-- Main Content -->
                 <div id="content">
-                    @include('livewire.dashboard.component.topbar')
+                    @include('livewire.dashboard-guru.component.topbar')
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
 
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">Rekap Guru</h1>
+                        <h1 class="h3 mb-2 text-gray-800">Rekap Siswa</h1>
                         <p>{{ date('M Y') }}</p>
                         <div class="row">
+                            <div class="col-md-5 col-sm-12">
+                                <div class="form-group">
+                                    {{-- <label for="exampleFormControlSelect1">Jurusan</label> --}}
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option selected disabled class="font-weight-bold">Jurusan</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-12">
+                                <div class="form-group">
+                                    {{-- <label for="exampleFormControlSelect1">Kelas</label> --}}
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option selected disabled class="font-weight-bold"> Kelas</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
                             {{-- Month --}}
-                            
-                            
-
-                           <!-- <div class="col-md-2 col-sm-12">
+                            <div class="col-md-2 col-sm-12">
                                 <div class="form-group">
                                     {{-- <label for="exampleFormControlSelect1">Kelas</label> --}}
                                     <select class="form-control" id="exampleFormControlSelect1">
@@ -46,18 +69,17 @@
                                 <a name="" id="" class="btn btn-primary" href="#"
                                     role="button">Pilih</a>
                             </div>
-                        </div>-->
+                        </div>
 
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <div class="row">
-                                    <h6 class="m-0 font-weight-bold text-primary">Rekap Guru</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Jurusan Kelas X</h6>
                                     <div class="ml-auto">
 
                                         <a name="" id="" class="btn btn-primary" href="#"
-                                            role="button"><i
-                                            class="fas fa-download fa-sm text-white-50"></i> Download</a>
+                                            role="button">Kirim</a>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +90,7 @@
                                             <tr class="text-center">
                                                 <th rowspan="2" class="align-middle">No</thc>
                                                 <th rowspan="2" class="align-middle">Nama</th>
-                                                <th rowspan="2" class="align-middle">NIP</th>
+                                                <th rowspan="2" class="align-middle">NIS</th>
                                                 <th colspan="4">Status</th>
                                             </tr>
                                             <tr class="text-center">

@@ -21,16 +21,22 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" wire:submit='login'>
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="email" name="email" wire:model='email' class="form-control form-control-user"
                                                 id="email" aria-describedby="emailHelp"
                                                 placeholder="Masukan Alamat Email...">
+                                            @error('email')
+                                            <small class="d-block mt-1 text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
+                                            <input type="password" name="password" wire:model='password' class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Pasword">
+                                                @error('password')
+                                                <small class="d-block mt-1 text-danger">{{ $message }}</small>
+                                                @enderror
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -38,9 +44,9 @@
                                                 <label class="custom-control-label" for="customCheck">Ingat saya</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Masuk
-                                        </a>
+                                        </button>
                                         
                                     </form>
                                     <hr>
