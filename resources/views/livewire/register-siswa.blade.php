@@ -1,6 +1,6 @@
 <div>
     @slot('title')
-        Register Admin - Sistem Presensi
+        Register Pegawai - Sistem Presensi
     @endslot
 
     <body class="bg-gradient-primary">
@@ -14,21 +14,28 @@
                         <div class="col-lg-7">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Buat Akun Admin!</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Buat Akun Siswa!</h1>
                                 </div>
-                                <form class="user" wire:submit='storeUser'>
+                                <form class="user" wire:submit='storeSiswa'>
                                     @csrf
                                     <div class="form-group">
-                                        <input wire:model='nama' type="text" class="form-control form-control-user"
+                                        <input wire:model='nama_siswa' type="text" class="form-control form-control-user"
                                             id="namaDepan" placeholder="Nama Lengkap">
-                                        @error('nama')
+                                        @error('nama_siswa')
                                             <small class="d-block mt-1 text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input wire:model='email' type="email" class="form-control form-control-user"
+                                        <input wire:model='nis' type="text" class="form-control form-control-user"
+                                            id="nis" placeholder="NIS">
+                                        @error('nis')
+                                            <small class="d-block mt-1 text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <input wire:model='email_siswa' type="email" class="form-control form-control-user"
                                             id="email" placeholder="Alamat Email">
-                                        @error('email')
+                                        @error('email_siswa')
                                             <small class="d-block mt-1 text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>

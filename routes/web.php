@@ -19,11 +19,16 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
 Route::get('/', App\Livewire\login::class)->name('login')->middleware('guest');
 Route::get('/register', App\Livewire\Register::class)->name('register');
-Route::post('/logout', App\Http\Controllers\LogoutController::class)->name('logout');
+Route::get('/register_pegawai', App\Livewire\RegisterPegawai::class)->name('registerPegawai');
+Route::get('/register_siswa', App\Livewire\RegisterSiswa::class)->name('registerSiswa');
+Route::get('/register_guru', App\Livewire\RegisterGuru::class)->name('registerGuru');
+Route::get('/register_kepsek', App\Livewire\RegisterKepalaSekolah::class)->name('registerKepalaSekolah');
+Route::get('/logout', App\Livewire\Login::class)->name('logout')->middleware('auth');
 
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('admin')->middleware('auth:kepsek')->group(function () {
 
     Route::get('/', App\Livewire\Dashboard\Index::class)->name('dashboard');
     Route::get('/profile', App\Livewire\Profile::class)->name('profile');

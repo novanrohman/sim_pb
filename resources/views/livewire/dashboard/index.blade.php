@@ -2,7 +2,7 @@
     @slot('title')
         Dashboard - Sistem Presensi
     @endslot
-    
+
     <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -379,10 +379,8 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <form action="{{ url('/logout') }}" method="post">
                     @csrf
-                <button class="btn btn-primary" type="submit">Logout</button>
-            </form>
+                <button class="btn btn-primary" wire:click="logout('kepsek')">Logout</button>
             </div>
         </div>
     </div>

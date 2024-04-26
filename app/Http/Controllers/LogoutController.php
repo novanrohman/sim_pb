@@ -10,10 +10,12 @@ class LogoutController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke($guard)
     {
-        Auth::logout();
-
-        return redirect(route('login'));
+        if (Auth::guard($guard)->check()) {
+            Auth::guard($guard)->logout();
+            session()->flash('success', 'You have been logged out.');
+            return redirect()->route('login');
+        }
     }
 }

@@ -6,15 +6,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Model;
 
-class Pegawai extends Model
+use function Laravel\Prompts\password;
+
+class Siswa extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nama_pegawai',
-        'nip',
-        'email_pegawai',
+    protected $fillable=[
+        'nis',
+        'nama_siswa',
+        'tempat_lahir',
+        'tanggla_lahir',
+        'jenis_kelamin',
+        'email_siswa',
         'password',
+        'id_kelas',
     ];
 
     protected $hidden = [
