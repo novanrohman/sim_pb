@@ -38,8 +38,8 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Siswa:</h6>
                 {{-- <a class="collapse-item" href="{{ url("/daftar_siswa") }}">Daftar Siswa</a> --}}
-                <a class="collapse-item" href="{{ url("/presensi_siswa") }}">Presensi</a>
-                <a class="collapse-item" href="cards.html">Rekap Presesnsi</a>
+                <a class="collapse-item" href="{{ url("guru/presensi_siswa") }}">Presensi</a>
+                <a class="collapse-item" href="{{ url("guru/rekap_siswa") }}">Rekap Presesnsi</a>
             </div>
         </div>
     </li>
@@ -55,8 +55,8 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Guru:</h6>
                 {{-- <a class="collapse-item" href="buttons.html">Daftar Guru</a> --}}
-                <a class="collapse-item" href="cards.html">Presensi</a>
-                <a class="collapse-item" href="cards.html">Rekap Presensi</a>
+{{--                <a class="collapse-item" href="cards.html">Presensi</a>--}}
+                <a class="collapse-item" href="{{url('guru/rekap_guru')}}">Rekap Presensi</a>
             </div>
         </div>
     </li>
@@ -97,7 +97,7 @@
         </div>
     </li> --}}
 
-    
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('tempat_lahir')->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->string('jenis_kelamin')->nullable();
-            $table->string('email_siswa')->unique();
+            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->bigInteger('id_kelas')->unsigned()->nullable();

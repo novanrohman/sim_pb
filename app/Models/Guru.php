@@ -14,9 +14,11 @@ class Guru extends Model
         'nama_guru',
         'nip',
         'telp_guru',
-        'email_guru',
+        'email',
         'jenis_kelamin',
         'alamat_guru',
         'id_mapel',
+        'password',
     ];
+
 }

@@ -18,7 +18,7 @@ class Siswa extends Model
         'tempat_lahir',
         'tanggla_lahir',
         'jenis_kelamin',
-        'email_siswa',
+        'email',
         'password',
         'id_kelas',
     ];

@@ -50,8 +50,7 @@
                                         <thead>
                                             <tr class="text-center">
                                                 <th rowspan="2" class="align-middle">No</thc>
-                                                <th rowspan="2" class="align-middle">Nama</th>
-                                                <th rowspan="2" class="align-middle">NIP</th>
+                                                <th rowspan="2" class="align-middle">Tanggal</th>
                                                 <th colspan="4">Status</th>
                                             </tr>
                                             <tr class="text-center">
@@ -64,8 +63,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>01</td>
-                                                <td>Tiger Nixon Albara Name Sata</td>
-                                                <td>1231231312</td>
+                                                <td>dd/mm/yyyy</td>
                                                 <td>18</td>
                                                 <td>1</td>
                                                 <td>0</td>

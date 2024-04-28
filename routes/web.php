@@ -26,9 +26,9 @@ Route::get('/register_pegawai', App\Livewire\RegisterPegawai::class)->name('regi
 Route::get('/register_siswa', App\Livewire\RegisterSiswa::class)->name('registerSiswa');
 Route::get('/register_guru', App\Livewire\RegisterGuru::class)->name('registerGuru');
 Route::get('/register_kepsek', App\Livewire\RegisterKepalaSekolah::class)->name('registerKepalaSekolah');
-Route::get('/logout', App\Livewire\Login::class)->name('logout')->middleware('auth');
+//Route::get('/logout', App\Http\Controllers\LogoutController::class)->name('logout')->middleware('auth');
 
-Route::prefix('admin')->middleware('auth:kepsek')->group(function () {
+Route::prefix('admin')->middleware('auth:web')->group(function () {
 
     Route::get('/', App\Livewire\Dashboard\Index::class)->name('dashboard');
     Route::get('/profile', App\Livewire\Profile::class)->name('profile');
@@ -49,8 +49,10 @@ Route::prefix('admin')->middleware('auth:kepsek')->group(function () {
     Route::get('/rekap_pegawai', App\Livewire\Dashboard\Pegawai\RekapPegawai::class)->name('rekapPegawai');
 });
 
-Route::prefix('guru')->group(function () {
-    Route::get('/', App\Livewire\DashboardGuru\Guru\RekapGuru::class);
-    Route::get('/presensi_siswa', App\Livewire\DashboardGuru\Siswa\PresensiSiswa::class);
+Route::prefix('guru')->middleware('auth:guru, ')->group(function () {
+    Route::get('/', App\Livewire\DashboardGuru\Index::class)->name('dashboardGuru');
+    Route::get('/rekap_guru', App\Livewire\DashboardGuru\Guru\RekapGuru::class)->name('guruRekapGuru');
+    Route::get('/presensi_siswa', App\Livewire\DashboardGuru\Siswa\PresensiSiswa::class)->name('guruPresensiSiswa');
     Route::get('/rekap_siswa', App\Livewire\DashboardGuru\Siswa\RekapSiswa::class);
+    Route::get('/profile', App\Livewire\DashboardGuru\Profile::class);
 });

@@ -75,7 +75,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Jurusan... Kelas... 20../20..</h6>
                                     <div class="ml-auto">
 
-                                        <a name="" id="" class="btn btn-primary" href="#" role="button">Cetak</a>
+                                        <a name="" id="" class="btn btn-primary" href="#" role="button">Kirim</a>
                                     </div>
                                 </div>
                             </div>

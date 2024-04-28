@@ -37,8 +37,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Siswa:</h6>
-                <a class="collapse-item" href="{{ url("/daftar_siswa") }}">Daftar Siswa</a>
-                <a class="collapse-item" href="{{ url("/presensi_siswa") }}">Presensi</a>
+                <a class="collapse-item" href="{{ url("admin/daftar_siswa") }}">Daftar Siswa</a>
+                <a class="collapse-item" href="{{ url("admin/presensi_siswa") }}">Presensi</a>
                 <a class="collapse-item" href="cards.html">Rekap Presesnsi</a>
             </div>
         </div>
@@ -54,7 +54,7 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Guru:</h6>
-                <a class="collapse-item" href="buttons.html">Daftar Guru</a>
+                <a class="collapse-item" href="{{url('/admin/data_guru')}}">Daftar Guru</a>
                 <a class="collapse-item" href="cards.html">Presensi</a>
                 <a class="collapse-item" href="cards.html">Rekap Presensi</a>
             </div>
@@ -97,7 +97,7 @@
         </div>
     </li>
 
-    
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

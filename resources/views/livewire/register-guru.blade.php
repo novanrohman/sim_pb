@@ -33,9 +33,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input wire:model='email_guru' type="email" class="form-control form-control-user"
+                                    <input wire:model='email' type="email" class="form-control form-control-user"
                                            id="email" placeholder="Alamat Email">
-                                    @error('email_guru')
+                                    @error('email')
                                     <small class="d-block mt-1 text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>

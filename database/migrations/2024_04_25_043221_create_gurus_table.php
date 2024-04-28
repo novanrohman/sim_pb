@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('nama_guru');
             $table->string('nip', length: 20);
             $table->string('telp_guru')->nullable();
-            $table->string('email_guru')->unique();
+            $table->string('email')->unique();
+            $table->string('password');
             $table->string('jenis_kelamin')->nullable();
             $table->text('alamat_guru')->nullable();
             $table->bigInteger('id_mapel')->unsigned()->nullable();

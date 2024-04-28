@@ -79,7 +79,7 @@
                                     <div class="ml-auto">
 
                                         <a name="" id="" class="btn btn-primary" href="#"
-                                            role="button">Kirim</a>
+                                            role="button">Cetak</a>
                                     </div>
                                 </div>
                             </div>

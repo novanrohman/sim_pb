@@ -10,7 +10,7 @@ class RegisterGuru extends Component
 {
     public $nama_guru;
     public $nip;
-    public $email_guru;
+    public $email;
     public $password;
 
     public function render()
@@ -23,20 +23,20 @@ class RegisterGuru extends Component
         $validate=$this->validate([
             'nama_guru'=>'required|max:255',
             'nip'=>'required|max:20|unique:gurus',
-            'email_guru'=>'required|email|unique:gurus',
+            'email'=>'required|email|unique:gurus',
             'password'=>'required|max:255'
         ]);
 
         $user=Guru::create([
             'nama_guru' => $this->nama_guru,
             'nip'=>$this->nip,
-            'email_guru'=>$this->email_guru,
-            'password'=>$this->password,
+            'email'=>$this->email,
+            'password'=>bcrypt($this->password),
         ]);
 
-        dd($user);
-//        Auth::login($user);
-//        session()->flash('success', 'Registration Success');
-//        return $this->redirect('/admin', navigate: true);
+
+        Auth::guard('guru')->login($user);
+        session()->flash('success', 'Registration Success');
+        return $this->redirect('/guru', navigate: true);
     }
 }

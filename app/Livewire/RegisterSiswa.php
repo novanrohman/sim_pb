@@ -11,7 +11,7 @@ class RegisterSiswa extends Component
 {
     public $nama_siswa;
     public $nis;
-    public $email_siswa;
+    public $email;
     public $password;
 
     public function render()
@@ -23,14 +23,14 @@ class RegisterSiswa extends Component
         $validate=$this->validate([
             'nama_siswa' => 'required|max:255',
             'nis' => 'required|max:20|unique:siswas',
-            'email_siswa' => 'required|email|unique:siswas',
+            'email' => 'required|email|unique:siswas',
             'password' => 'required|max:255'
         ]);
 
         $user=Siswa::create([
             'nama_siswa' => $this->nama_siswa,
             'nis'=>$this->nis,
-            'email_siswa'=>$this->email_siswa,
+            'email'=>$this->email_siswa,
             'password'=>bcrypt($this->password)
         ]);
 

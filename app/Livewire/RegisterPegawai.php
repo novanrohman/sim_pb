@@ -11,7 +11,7 @@ class RegisterPegawai extends Component
 
     public $nama_pegawai;
     public $nip;
-    public $email_pegawai;
+    public $email;
     public $password;
 
     public function render()
@@ -23,14 +23,14 @@ class RegisterPegawai extends Component
         $validated=$this->validate([
             'nama_pegawai'=>'required|max:255',
             'nip'=>'required|max:20|unique:pegawais',
-            'email_pegawai'=>'required|email|unique:pegawais|max:255',
+            'email'=>'required|email|unique:pegawais|max:255',
             'password'=>'required|max:255'
         ]);
 
         $user=Pegawai::create([
             'nama_pegawai'=>$this->nama_pegawai,
             'nip'=>$this->nip,
-            'email_pegawai'=>$this->email_pegawai,
+            'email'=>$this->email_pegawai,
             'password'=>bcrypt($this->password)
         ]);
 

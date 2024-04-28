@@ -12,6 +12,7 @@ Project SIM SMK Puspa Bangsa serta untuk memenuhi kebutuhan magang
 - Admin
 - Guru
 - Staff Tata Usaha
+- Siswa
 
 ### Features
 - Presensi Staff Tata Usaha
