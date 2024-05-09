@@ -19,21 +19,21 @@
                             <form class="user" wire:submit='storeGuru'>
                                 @csrf
                                 <div class="form-group">
-                                    <input wire:model='nama_guru' type="text" class="form-control form-control-user"
+                                    <input wire:model.live='nama_guru' type="text" class="form-control form-control-user"
                                            id="namaDepan" placeholder="Nama Lengkap">
                                     @error('nama_guru')
                                     <small class="d-block mt-1 text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input wire:model='nip' type="text" class="form-control form-control-user"
+                                    <input wire:model.live='nip' type="text" class="form-control form-control-user"
                                            id="nip" placeholder="NIP">
                                     @error('nip')
                                     <small class="d-block mt-1 text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input wire:model='email' type="email" class="form-control form-control-user"
+                                    <input wire:model.live='email' type="email" class="form-control form-control-user"
                                            id="email" placeholder="Alamat Email">
                                     @error('email')
                                     <small class="d-block mt-1 text-danger">{{ $message }}</small>
@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input wire:model='password' type="password"
+                                        <input wire:model.live='password' type="password"
                                                class="form-control form-control-user" id="pasword"
                                                placeholder="Kata Sandi">
                                         @error('password')

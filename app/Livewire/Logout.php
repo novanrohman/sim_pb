@@ -23,6 +23,10 @@ class Logout extends Component
             Auth::guard('guru')->logout();
             session()->flash('success', 'You have been logged out.');
             return redirect()->route('login');
+        }elseif (Auth::guard('siswa')->check()){
+            Auth::guard('siswa')->logout();
+            session()->flash('success', 'You have been logged out.');
+            return redirect()->route('login');
         }
 
     }

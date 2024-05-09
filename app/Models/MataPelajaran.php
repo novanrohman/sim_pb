@@ -3,7 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Model;
 
 class MataPelajaran extends Model
 {
@@ -11,6 +12,10 @@ class MataPelajaran extends Model
 
     protected $fillable=[
       'mata_pelajaran',
-      'mata_semester',
+      'semester',
     ];
+    public function guru()
+    {
+        return $this->hasMany(Guru::class,'id_mapel');
+    }
 }

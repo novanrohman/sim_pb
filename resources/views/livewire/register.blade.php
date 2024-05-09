@@ -19,14 +19,14 @@
                                 <form class="user" wire:submit='storeUser'>
                                     @csrf
                                     <div class="form-group">
-                                        <input wire:model='nama' type="text" class="form-control form-control-user"
+                                        <input wire:model.live='nama' type="text" class="form-control form-control-user"
                                             id="namaDepan" placeholder="Nama Lengkap">
                                         @error('nama')
                                             <small class="d-block mt-1 text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input wire:model='email' type="email" class="form-control form-control-user"
+                                        <input wire:model.live='email' type="email" class="form-control form-control-user"
                                             id="email" placeholder="Alamat Email">
                                         @error('email')
                                             <small class="d-block mt-1 text-danger">{{ $message }}</small>
@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input wire:model='password' type="password"
+                                            <input wire:model.live='password' type="password"
                                                 class="form-control form-control-user" id="pasword"
                                                 placeholder="Kata Sandi">
                                             @error('password')

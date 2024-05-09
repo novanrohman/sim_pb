@@ -25,8 +25,8 @@
                         <p>{{ date('M Y') }}</p>
                         <div class="row">
                             {{-- Month --}}
-                            
-                            
+
+
 
                            <!-- <div class="col-md-2 col-sm-12">
                                 <div class="form-group">
@@ -55,7 +55,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Rekap Guru</h6>
                                     <div class="ml-auto">
 
-                                        <a name="" id="" class="btn btn-primary" href="#"
+                                        <a id="" class="btn btn-primary" href="#"
                                             role="button"><i
                                             class="fas fa-download fa-sm text-white-50"></i> Download</a>
                                     </div>
@@ -66,7 +66,7 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr class="text-center">
-                                                <th rowspan="2" class="align-middle">No</thc>
+                                                <th rowspan="2" class="align-middle">No</th>
                                                 <th rowspan="2" class="align-middle">Nama</th>
                                                 <th rowspan="2" class="align-middle">NIP</th>
                                                 <th colspan="4">Status</th>

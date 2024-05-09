@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 //use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Model;
+use \Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Guru extends Model
 {
@@ -21,4 +22,8 @@ class Guru extends Model
         'password',
     ];
 
+    public function matapelajaran()
+    {
+        return $this->belongsTo(MataPelajaran::class,'id');
+    }
 }

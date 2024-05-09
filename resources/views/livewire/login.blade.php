@@ -24,7 +24,7 @@
                                     <form class="user" wire:submit='login'>
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" name="email" wire:model='email' class="form-control form-control-user"
+                                            <input type="email" name="email" wire:model.live='email' class="form-control form-control-user"
                                                 id="email" aria-describedby="emailHelp"
                                                 placeholder="Masukan Alamat Email...">
                                             @error('email')
@@ -32,7 +32,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" wire:model='password' class="form-control form-control-user"
+                                            <input type="password" name="password" wire:model.live='password' class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Pasword">
                                                 @error('password')
                                                 <small class="d-block mt-1 text-danger">{{ $message }}</small>
@@ -44,10 +44,10 @@
                                                 <label class="custom-control-label" for="customCheck">Ingat saya</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" wire:confirm="Benar ingin login?" class="btn btn-primary btn-user btn-block">
                                             Masuk
                                         </button>
-                                        
+
                                     </form>
                                     <hr>
                                     <div class="text-center">
