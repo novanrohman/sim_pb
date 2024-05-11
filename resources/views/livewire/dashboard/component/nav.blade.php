@@ -12,7 +12,7 @@ Use Sidebar
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" wire:navigate href="{{ url("admin/") }}">
+                <a class="nav-link" href="{{ url("admin/") }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
@@ -25,9 +25,9 @@ Use Sidebar
                 </a>
                 <div class="collapse" id="siswa" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" wire:navigate href="{{ url("admin/daftar_siswa") }}">Daftar Siswa</a>
-                        <a class="nav-link" wire:navigate href="{{ url("admin/presensi_siswa") }}">Presensi</a>
-                        <a class="nav-link" wire:navigate href="cards.html">Rekap Presesnsi</a>
+                        <a class="nav-link" href="{{ url("admin/daftar_siswa") }}">Daftar Siswa</a>
+                        <a class="nav-link" href="{{ url("admin/presensi_siswa") }}">Presensi</a>
+                        <a class="nav-link" href="cards.html">Rekap Presesnsi</a>
                     </nav>
                 </div>
                 {{--End Siswa--}}
@@ -41,8 +41,8 @@ Use Sidebar
                 <div class="collapse" id="guru" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{url('/admin/data_guru')}}">Daftar Guru</a>
-                        <a class="nav-link" href="cards.html">Presensi</a>
-                        <a class="nav-link" href="cards.html">Rekap Presensi</a>
+{{--                        <a class="nav-link" >Presensi</a>--}}
+                        <a class="nav-link" href="{{url('/admin/rekap_guru')}}">Rekap Presensi</a>
                     </nav>
                 </div>
                 {{--End Guru--}}
@@ -55,17 +55,33 @@ Use Sidebar
                 </a>
                 <div class="collapse" id="pegawai" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="buttons.html">Daftar Pegawai</a>
+                        <a class="nav-link" href="{{url('/admin/daftar_pegawai')}}">Daftar Pegawai</a>
                         <a class="nav-link" href="cards.html">Presensi</a>
                         <a class="nav-link" href="cards.html">Rekap Presensi</a>
                     </nav>
                 </div>
                 {{--End Pegawai--}}
+
+                <div class="sb-sidenav-menu-heading">Lain-lain</div>
+                {{--Jadwal--}}
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#jadwal" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="ti ti-school"></i></div>
+                    Mata Pelajaran
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="jadwal" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ url("admin/daftar_siswa") }}">Daftar Mapel</a>
+                        <a class="nav-link" href="{{ url("admin/presensi_siswa") }}">Jadwal</a>
+                        <a class="nav-link" href="cards.html">Rekap Presesnsi</a>
+                    </nav>
+                </div>
+                {{--End Jadwal--}}
             </div>
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>
-            {{auth()}}
+            {{\Illuminate\Support\Facades\Auth::user()->name}}
         </div>
     </nav>
 </div>

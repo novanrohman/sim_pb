@@ -41,7 +41,6 @@ Route::prefix('admin')->middleware('auth:web')->group(function () {
 
     // Guru
     Route::get('/data_guru', App\Livewire\Dashboard\Guru\DaftarGuru::class)->name('dataGuru');
-//    Route::get('/data_guru/hapus', App\Livewire\Dashboard\Guru\DaftarGuru::class, 'destroy')->name('destroy');
     Route::get('/rekap_guru', App\Livewire\Dashboard\Guru\RekapGuru::class)->name('rekapGuru');
     Route::get('/detail_guru/{$id}', App\Livewire\Dashboard\Guru\DetailGuru::class)->name('detailGuru');
 

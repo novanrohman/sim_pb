@@ -4,6 +4,7 @@ namespace App\Livewire\Dashboard\Guru;
 
 use App\Models\Guru;
 use App\Models\MataPelajaran;
+use Illuminate\Support\Facades\DB;
 use JetBrains\PhpStorm\NoReturn;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
@@ -27,8 +28,23 @@ class DaftarGuru extends Component
         return view('livewire.dashboard.guru.daftar-guru');
     }
 
-    public function delete( Guru $guru )
+    //Remove guru
+    public function delete($id)
     {
-        dd('delete');
+//        dd($id);
+
+//        DB::table($this->gurus)->where('id','==', $id)->delete();
+        Guru::find($id)->delete();
+
+        session()->flash('message', 'Data berhasil dihapus.');
+
+        return redirect(url('/admin/data_guru'));
+
+    }
+
+    //Tables
+    public function initializeDataTables()
+    {
+        $this->dispatchBrowserEvent('initSimpleDataTables');
     }
 }
