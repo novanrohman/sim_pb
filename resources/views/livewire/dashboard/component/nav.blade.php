@@ -26,7 +26,6 @@ Use Sidebar
                 <div class="collapse" id="siswa" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ url("admin/daftar_siswa") }}">Daftar Siswa</a>
-                        <a class="nav-link" href="{{ url("admin/presensi_siswa") }}">Presensi</a>
                         <a class="nav-link" href="cards.html">Rekap Presesnsi</a>
                     </nav>
                 </div>
@@ -56,7 +55,6 @@ Use Sidebar
                 <div class="collapse" id="pegawai" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{url('/admin/daftar_pegawai')}}">Daftar Pegawai</a>
-                        <a class="nav-link" href="cards.html">Presensi</a>
                         <a class="nav-link" href="cards.html">Rekap Presensi</a>
                     </nav>
                 </div>
@@ -71,12 +69,24 @@ Use Sidebar
                 </a>
                 <div class="collapse" id="jadwal" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ url("admin/daftar_siswa") }}">Daftar Mapel</a>
-                        <a class="nav-link" href="{{ url("admin/presensi_siswa") }}">Jadwal</a>
-                        <a class="nav-link" href="cards.html">Rekap Presesnsi</a>
+                        <a class="nav-link" href="{{ url("admin/mapel") }}">Daftar Mapel</a>
+                        <a class="nav-link" href="{{ url("admin/jadwal") }}">Jadwal</a>
                     </nav>
                 </div>
                 {{--End Jadwal--}}
+
+                {{--Kelas--}}
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#kelas" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="ti ti-school"></i></div>
+                    Kelas
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="kelas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ url("admin/kelas") }}">Daftar Kelas</a>
+                    </nav>
+                </div>
+                {{--End Kelas--}}
             </div>
         </div>
         <div class="sb-sidenav-footer">

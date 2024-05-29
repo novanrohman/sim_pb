@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama_pegawai', length:50);
             $table->text('alamat_pegawai')->nullable();
             $table->char('telp_pegawai', length:15)->nullable();
+            $table->string('jabatan', length:15)->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

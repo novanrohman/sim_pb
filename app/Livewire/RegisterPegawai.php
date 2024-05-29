@@ -30,11 +30,11 @@ class RegisterPegawai extends Component
         $user=Pegawai::create([
             'nama_pegawai'=>$this->nama_pegawai,
             'nip'=>$this->nip,
-            'email'=>$this->email_pegawai,
+            'email'=>$this->email,
             'password'=>bcrypt($this->password)
         ]);
 
-        dd($user);
+        // dd($user);
         Auth::login($user);
         session()->flash('success', 'Registration Success');
         return $this->redirect('/admin', navigate:true);

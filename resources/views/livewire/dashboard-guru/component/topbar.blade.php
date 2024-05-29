@@ -8,7 +8,7 @@ Use Navbar
 {{--Navbar--}}
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" wire:navigate href="{{url('/admin')}}">
+    <a class="navbar-brand ps-3" wire:navigate href="{{url('/guru')}}">
         <img src="{{ asset('assets/logo/logo.png') }}" alt="" style="width: 2rem">
         Start Bootstrap</a>
     <!-- Sidebar Toggle-->

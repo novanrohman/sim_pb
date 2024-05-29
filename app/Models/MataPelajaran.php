@@ -14,6 +14,7 @@ class MataPelajaran extends Model
       'mata_pelajaran',
       'semester',
     ];
+    
     public function guru()
     {
         return $this->hasMany(Guru::class,'id_mapel');

@@ -3,8 +3,83 @@
         {{ $title }}
     @endslot
 
-    <body id="page-top">
+    @include('livewire.dashboard-guru.component.topbar');
+    @include('livewire.dashboard-guru.component.nav');
+    {{-- Presensi siswa --}}
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Presensi Siswa</h1>
 
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="form-group">
+                          <label for="">Jurusan</label>
+                          <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        Presensi {{ date('Y/m/d') }}
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nomor</th>
+                                    <th>Nama</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {{-- <p>{{ dd($siswa as $siswa->nama) }}</p> --}}
+                                    @forelse ($siswas as $siswa => $value)
+                                <tr>
+                                    <td>{{ $siswa + 1 + ($siswas->currentPage() - 1) * $siswas->perPage() }}</td>
+                                    <td>{{ $value->nama_siswa }}</td>
+                                    <td>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option selected disabled class="font-weight-bold">Status</option>
+                                            <option value="Hadir">Hadir</option>
+                                            <option value="Izin">Izin</option>
+                                            <option value="Sakit">Sakit</option>
+                                            <option value="Alpha">Alpha</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            @empty
+                                <td colspan="3" class="text-center">Data tidak ditemukan</td>
+                                @endforelse
+
+                            </tbody>
+                            {{-- <p class="text-center">Data Tidak Ditemukan</p> --}}
+                        </table>
+                        <button type="button" name="" id="" class="btn btn-primary" btn-lg btn-block">Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        &middot;
+                        <a href="#">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    {{-- End Presensi siswa --}}
+    {{-- @include('livewire.dashboard-guru.component.footer'); --}}
+</div>
+
+{{-- <body id="page-top">
         <!-- Page Wrapper -->
         <div id="wrapper">
 
@@ -26,7 +101,7 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-12">
                                 <div class="form-group">
-                                    {{-- <label for="exampleFormControlSelect1">Jurusan</label> --}}
+                                    <label for="exampleFormControlSelect1">Jurusan</label>
                                     <select class="form-control" id="exampleFormControlSelect1">
                                         <option selected disabled class="font-weight-bold">Jurusan</option>
                                         <option>1</option>
@@ -39,7 +114,7 @@
                             </div>
                             <div class="col-md-3 col-sm-12">
                                 <div class="form-group">
-                                    {{-- <label for="exampleFormControlSelect1">Kelas</label> --}}
+                                    <label for="exampleFormControlSelect1">Kelas</label>
                                     <select class="form-control" id="exampleFormControlSelect1">
                                         <option selected disabled class="font-weight-bold"> Kelas</option>
                                         <option>1</option>
@@ -52,7 +127,7 @@
                             </div>
                             <div class="col-md-3 col-sm-12">
                                 <div class="form-group">
-                                    {{-- <label for="exampleFormControlSelect1">Kelas</label> --}}
+                                    <label for="exampleFormControlSelect1">Kelas</label>
                                     <select class="form-control" id="exampleFormControlSelect1">
                                         <option selected disabled class="font-weight-bold"> Tahun Ajar</option>
                                         <option>1</option>
@@ -119,4 +194,4 @@
                 <!-- End of Main Content -->
             </div>
         </div>
-</div>
+</div> --}}

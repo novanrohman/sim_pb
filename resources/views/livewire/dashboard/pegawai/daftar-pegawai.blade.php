@@ -31,30 +31,31 @@
                             </thead>
                             <tbody>
                             <!--Data siswa-->
-                            {{--                            @forelse($gurus as $guru => $value)--}}
-                            {{--                                <tr class="text-center">--}}
-                            {{--                                    <td>{{$guru+1}}</td>--}}
-                            {{--                                    <td>{{$value['nama_guru']}}</td>--}}
-                            {{--                                    <td>{{$value['nip']}}</td>--}}
-                            {{--                                    <td>{{$value['telp'] ??'Belum ada'}}</td>--}}
-                            {{--                                    <td>{{$value['matapelajaran']??'Belum ada'}}</td>--}}
-                            {{--                                    <td>--}}
-                            {{--                                        <a wire:click="detailGuru"--}}
-                            {{--                                           class="btn btn-primary"--}}
-                            {{--                                           type="button">Detail</a>--}}
+                                                        @forelse($pegawais as $pegawai => $value)
+                                                            <tr class="text-center">
+                                                                <td>{{$pegawai+1}}</td>
+                                                                <td>{{$value['nama_pegawai']}}</td>
+                                                                <td>{{$value['nip']}}</td>
+                                                                <td>{{$value['jabatan'] ??'Belum ada'}}</td>
+                                                                <td>{{$value['telp'] ??'Belum ada'}}</td>
+{{--                                                                <td>{{$value['matapelajaran']??'Belum ada'}}</td>--}}
+                                                                <td>
+                                                                    <a wire:click="detailGuru"
+                                                                       class="btn btn-primary"
+                                                                       type="button">Detail</a>
 
-                            {{--                                        <!--Delete Button-->--}}
-                            {{--                                        <button class="btn btn-danger"--}}
-                            {{--                                                wire:confirm="Yakin ingin dihapus?"--}}
-                            {{--                                                wire:click="delete({{$value['id']}})">Hapus--}}
-                            {{--                                            <div wire:loading>Loading...</div>--}}
-                            {{--                                        </button>--}}
-                            {{--                                        <!--End Delete Button-->--}}
+                                                                    <!--Delete Button-->
+                                                                    <button class="btn btn-danger"
+                                                                            wire:confirm="Yakin ingin dihapus?"
+                                                                            wire:click="delete({{$value['id']}})">Hapus
+                                                                        <div wire:loading>Loading...</div>
+                                                                    </button>
+                                                                    <!--End Delete Button-->
 
-                            {{--                                    </td>--}}
-                            {{--                                </tr>--}}
-                            {{--                            @empty--}}
-                            {{--                            @endforelse--}}
+                                                                </td>
+                                                            </tr>
+                                                        @empty
+                                                        @endforelse
                             <!--End data siswa-->
                             </tbody>
                         </table>

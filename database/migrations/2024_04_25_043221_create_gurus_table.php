@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('jenis_kelamin')->nullable();
             $table->text('alamat_guru')->nullable();
             $table->bigInteger('id_mapel')->unsigned()->nullable();
-            $table->foreign('id_mapel')->references('id')->on('mata_pelajarans');
+            $table->foreign('id_mapel')->references('id')->on('mata_pelajarans')->detach();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

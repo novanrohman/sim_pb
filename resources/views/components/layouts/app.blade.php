@@ -25,7 +25,7 @@
     <link href="{{asset('assets/sb-admin/css/styles.css')}}" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     {{--Script SB Admin--}}
     <script src="{{asset('assets/sb-admin/js/simple-datatables.min.js')}}"
             crossorigin="anonymous"></script>
@@ -38,7 +38,8 @@
 </head>
 
 <body class="sb-nav-fixed">
-{{ $slot }}
+
+    {{ $slot }}
 
 @livewireScripts
 {{--SB Admin--}}

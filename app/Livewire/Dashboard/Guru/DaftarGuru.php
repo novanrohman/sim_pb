@@ -17,23 +17,21 @@ class DaftarGuru extends Component
     public $gurus = null;
 
 
-    public function mount(){
-        $this->gurus=Guru::all();
-    }
-    public function render()
+    public function mount()
     {
-//        $gurus = Guru::with('matapelajaran')->paginate(5);
-//        dd($gurus);
-//        return view('livewire.dashboard.guru.daftar-guru',compact('gurus'));
-        return view('livewire.dashboard.guru.daftar-guru');
+        $this->gurus = Guru::all();
+
+        foreach ($this->gurus as $guru) {
+            $guru->mapel_name = MataPelajaran::find($guru->id_mapel)->mata_pelajaran;
+        }
+
+//        dd($guru->mapel_name);
     }
+
 
     //Remove guru
     public function delete($id)
     {
-//        dd($id);
-
-//        DB::table($this->gurus)->where('id','==', $id)->delete();
         Guru::find($id)->delete();
 
         session()->flash('message', 'Data berhasil dihapus.');
@@ -46,5 +44,19 @@ class DaftarGuru extends Component
     public function initializeDataTables()
     {
         $this->dispatchBrowserEvent('initSimpleDataTables');
+    }
+
+//    Detail Guru
+    public function detailGuru($id)
+    {
+        return redirect()->route('detailGuru', ['id' => $id]);
+    }
+
+    public function render()
+    {
+//        $gurus = Guru::with('matapelajaran')->paginate(5);
+//        dd($gurus);
+//        return view('livewire.dashboard.guru.daftar-guru',compact('gurus'));
+        return view('livewire.dashboard.guru.daftar-guru');
     }
 }

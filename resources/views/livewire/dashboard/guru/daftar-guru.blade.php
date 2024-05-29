@@ -36,18 +36,17 @@
                                     <td>{{$guru+1}}</td>
                                     <td>{{$value['nama_guru']}}</td>
                                     <td>{{$value['nip']}}</td>
-                                    <td>{{$value['telp'] ??'Belum ada'}}</td>
-                                    <td>{{$value['matapelajaran']??'Belum ada'}}</td>
+                                    <td>{{$value['telp_guru'] ??'Belum ada'}}</td>
+                                    <td>{{$value['mapel_name'] ??'Belum ada'}}</td>
                                     <td>
-                                        <a wire:click="detailGuru"
+                                        <a wire:click="detailGuru({{$value['id']}})"
                                            class="btn btn-primary"
                                            type="button">Detail</a>
 
                                         <!--Delete Button-->
-                                        <button class="btn btn-danger"
+                                        <button class="btn btn-outline-danger"
                                                 wire:confirm="Yakin ingin dihapus?"
                                                 wire:click="delete({{$value['id']}})">Hapus
-                                            <div wire:loading>Loading...</div>
                                         </button>
                                         <!--End Delete Button-->
 
@@ -64,6 +63,6 @@
         @include('livewire.dashboard.component.footer')
     </div>
 </div>
-</div>
+
 
 

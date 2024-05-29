@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->bigInteger('id_kelas')->unsigned()->nullable();
-            $table->foreign('id_kelas')->references('id')->on('kelass');
+            $table->foreign('id_kelas')->references('id')->on('kelas');
             $table->rememberToken();
             $table->timestamps();
         });

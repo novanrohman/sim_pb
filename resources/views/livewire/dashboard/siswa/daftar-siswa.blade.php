@@ -25,36 +25,33 @@
                                 <th>Nama</th>
                                 <th>NIS</th>
                                 <th>Kelas</th>
-                                <th>Telp</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <!--Data siswa-->
-{{--                            @forelse($gurus as $guru => $value)--}}
-{{--                                <tr class="text-center">--}}
-{{--                                    <td>{{$guru+1}}</td>--}}
-{{--                                    <td>{{$value['nama_guru']}}</td>--}}
-{{--                                    <td>{{$value['nip']}}</td>--}}
-{{--                                    <td>{{$value['telp'] ??'Belum ada'}}</td>--}}
-{{--                                    <td>{{$value['matapelajaran']??'Belum ada'}}</td>--}}
-{{--                                    <td>--}}
-{{--                                        <a wire:click="detailGuru"--}}
-{{--                                           class="btn btn-primary"--}}
-{{--                                           type="button">Detail</a>--}}
+                            @forelse($siswas as $siswa => $value)
+                                <tr class="text-center">
+                                    <td>{{$siswa+1}}</td>
+                                    <td>{{$value['nama_siswa']}}</td>
+                                    <td>{{$value['nis']}}</td>
+                                    <td>{{$value['id_kelas']??'Belum ada'}}</td>
+                                    <td>
+                                        <a wire:click="detailSiswa({{$value['id']}})"
+                                           class="btn btn-primary"
+                                           type="button">Detail</a>
 
-{{--                                        <!--Delete Button-->--}}
-{{--                                        <button class="btn btn-danger"--}}
-{{--                                                wire:confirm="Yakin ingin dihapus?"--}}
-{{--                                                wire:click="delete({{$value['id']}})">Hapus--}}
-{{--                                            <div wire:loading>Loading...</div>--}}
-{{--                                        </button>--}}
-{{--                                        <!--End Delete Button-->--}}
+                                        <!--Delete Button-->
+                                        <button class="btn btn-danger"
+                                                wire:confirm="Yakin ingin dihapus?"
+                                                wire:click="delete({{$value['id']}})">Hapus
+                                        </button>
+                                        <!--End Delete Button-->
 
-{{--                                    </td>--}}
-{{--                                </tr>--}}
-{{--                            @empty--}}
-{{--                            @endforelse--}}
+                                    </td>
+                                </tr>
+                            @empty
+                            @endforelse
                             <!--End data siswa-->
                             </tbody>
                         </table>

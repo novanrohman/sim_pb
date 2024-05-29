@@ -2,12 +2,26 @@
 
 namespace App\Livewire\Dashboard\Siswa;
 
+use App\Models\Siswa;
 use Livewire\Component;
 
 class DetailSiswa extends Component
 {
+    protected $siswa;
+
+    public function mount($id)
+    {
+        $this->siswa = Siswa::find($id);
+    }
+
     public function render()
     {
-        return view('livewire.dashboard.siswa.detail-siswa');
+        return view('livewire.dashboard.siswa.detail-siswa',
+            [
+                'siswa' => $this->siswa,
+            ]
+        );
     }
+
+
 }

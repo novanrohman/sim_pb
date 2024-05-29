@@ -30,6 +30,9 @@ class Login extends Component
         elseif (Auth::guard('guru')->attempt($this->validate())) {
             return redirect()->route('dashboardGuru');
         }
+        elseif (Auth::guard('pegawai')->attempt($this->validate())) {
+            return redirect()->route('dashboardPegawai');
+        }
 
         throw ValidationException::withMessages([
             'email' => 'The provide credentials do not match our records',

@@ -3,8 +3,8 @@
         Dashboard Guru - Sistem Presensi
     @endslot
 
-        @include('livewire.dashboard.component.topbar')
-        @include('livewire.dashboard.component.nav')
+        @include('livewire.dashboard-guru.component.topbar')
+        @include('livewire.dashboard-guru.component.nav')
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
