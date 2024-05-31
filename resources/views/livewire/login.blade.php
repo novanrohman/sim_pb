@@ -21,7 +21,7 @@
                                             @csrf
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="email"
-                                                       placeholder="name@example.com" wire:model.live='email'
+                                                       placeholder="name@example.com" wire:model.defer='email'
                                                        name="email"/>
                                                 <label for="inputEmail">Email address</label>
                                                 @error('email')
@@ -30,7 +30,7 @@
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputPassword" type="password"
-                                                       placeholder="Password" wire:model.live='password' name="password"/>
+                                                       placeholder="Password" wire:model.defer='password' name="password"/>
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="form-check mb-3">

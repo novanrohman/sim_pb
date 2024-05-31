@@ -13,5 +13,9 @@ class Kelas extends Model
         'kelas'
     ];
 
+    public function siswa(){
+        return $this->hasMany(Kelas::class,'id_kelas');
+    }
+
 
 }

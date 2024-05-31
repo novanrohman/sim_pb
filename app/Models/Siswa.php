@@ -32,4 +32,8 @@ class Siswa extends Model
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function kelas(){
+        return $this->belongsTo(Kelas::class, 'id_kelas');
+    }
 }

@@ -66,7 +66,7 @@
                                     @forelse ($kelas as $key => $value)
                                     <tr class="text-center">
                                         <td >{{ $key + 1 + ($kelas->currentPage() - 1) * $kelas->perPage() }}</td>
-                                        <td >{{ $value->kelas }}</td>
+                                        <td >{{ $value->kelas->kelas }}</td>
                                         <td>
                                             <a wire:click="detailEdit({{ '' }})" class="btn btn-primary"
                                                 type="button">Edit</a>
