@@ -7,20 +7,25 @@ use Livewire\Component;
 
 class Filter extends Component
 {
-    public $selectedCategory;
+    public $kelas;
+    public $selected = null;
 
-    public $query;
-    public $categoryId;
-
-    public function selectedCategory(){
-        $this->emitTo("show-siswas", 'reloadSiswas', $this->categoryId, $this->query);
+    //show all daftar kelas
+    public function mount(Kelas $kelas)
+    {
+        $this->kelas = $kelas->get();
     }
+
+    public function filter()
+    {
+        // $this->dispatch('filtered', id_kelas:$this->selected);
+        $this->dispatch('filtered', id_kelas:$this->selected);
+        // dd($this->selected);
+    }
+    
     public function render()
     {
-        $kelas = Kelas::get();
-        return view('livewire.dashboard-guru.siswa.filter', 
-        [
-            'kelas'=> $kelas,
-        ]);
+        
+        return view('livewire.dashboard-guru.siswa.filter');
     }
 }
