@@ -35,7 +35,7 @@
                                     <td>{{$siswa+1}}</td>
                                     <td>{{$value['nama_siswa']}}</td>
                                     <td>{{$value['nis']}}</td>
-                                    <td>{{$value['id_kelas']??'Belum ada'}}</td>
+                                    <td>{{$value->kelas->kelas??'Belum ada'}}</td>
                                     <td>
                                         <a wire:click="detailSiswa({{$value['id']}})"
                                            class="btn btn-primary"

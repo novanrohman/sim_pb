@@ -10,7 +10,7 @@
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Detail</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Detail guru</li>
+                    <li class="breadcrumb-item active">Detail siswa</li>
                 </ol>
                 <main>
                     <div class="row">
@@ -90,40 +90,12 @@
                             </div>
                         </div>
                         <div class="col-4">
-                            <a name="" id="" class="btn btn-outline-danger col-12" href="{{url('/admin/daftar_siswa')}}" role="button">Kembali</a>
+                            <a name="" id="" class="btn btn-outline-danger col-12 mb-4" href="{{url('/admin/daftar_siswa')}}" role="button">Kembali</a>
+                            <a name="" id="" class="btn btn-outline-warning col-12" wire:click='edit({{ $siswa['id'] }})' role="button">Edit</a>
                         </div>
                     </div>
                 </main>
             </div>
             @include('livewire.dashboard.component.footer')
         </div>
-
-{{--<body id="page-top">--}}
-
-{{--    <!-- Page Wrapper -->--}}
-{{--    <div id="wrapper">--}}
-
-{{--        @include('livewire.dashboard.component.nav')--}}
-
-
-
-{{--        <!-- Content Wrapper -->--}}
-{{--        <div id="content-wrapper" class="d-flex flex-column">--}}
-
-{{--            <!-- Main Content -->--}}
-{{--            <div id="content">--}}
-{{--                @include('livewire.dashboard.component.topbar')--}}
-
-{{--                <!-- Begin Page Content -->--}}
-{{--                <div class="container-fluid">--}}
-{{--                    <div class="form-group">--}}
-{{--                      <label for="nama">Nama</label>--}}
-{{--                      <input type="email" class="form-control" name="nama" id="" aria-describedby="emailHelpId" placeholder="">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                    @include('livewire.dashboard.component.footer')--}}
-{{--                </div>--}}
-{{--                <!-- End of Main Content -->--}}
-{{--            </div>--}}
-{{--        </div>--}}
 </div>

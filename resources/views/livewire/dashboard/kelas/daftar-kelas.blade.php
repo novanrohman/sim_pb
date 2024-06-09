@@ -35,8 +35,8 @@
                             <form wire:submit='storeKelas'>
                                 <div class="form-group mb-4">
                                     <label for="exampleInputEmail1">Nama Kelas</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1"
-                                        name="kelas" wire:model='addkelas' aria-describedby="emailHelp">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="kelas"
+                                        wire:model='addkelas' aria-describedby="emailHelp">
                                 </div>
                                 <button type="submit" class="btn btn-primary w-100" role="button">Tambah</button>
                             </form>
@@ -60,28 +60,31 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {{-- {{ dd($kelas) }} --}}
+                                    {{-- {{ dd($kelas) }} --}}
 
                                     <!--Data Kelas-->
-                                    @forelse ($kelas as $key => $value)
-                                    <tr class="text-center">
-                                        <td >{{ $key + 1 + ($kelas->currentPage() - 1) * $kelas->perPage() }}</td>
-                                        <td >{{ $value->kelas->kelas }}</td>
-                                        <td>
-                                            <a wire:click="detailEdit({{ '' }})" class="btn btn-primary"
-                                                type="button">Edit</a>
+                                    
+                                        @forelse ($kelas as $key => $value)
+                                            <tr class="text-center">
+                                                <td>{{ $key + 1 + ($kelas->currentPage() - 1) * $kelas->perPage() }}
+                                                </td>
+                                                <td>{{ $value->kelas }}</td>
+                                                <td>
+                                                    <a wire:click="detailEdit({{ '' }})"
+                                                        class="btn btn-primary" type="button">Edit</a>
 
-                                            <!--Delete Button-->
-                                            <button class="btn btn-outline-danger" wire:confirm="Yakin ingin dihapus?"
-                                                wire:click="delete({{ $value->id }})">Hapus
-                                            </button>
-                                            <!--End Delete Button-->
+                                                    <!--Delete Button-->
+                                                    <button class="btn btn-outline-danger"
+                                                        wire:confirm="Yakin ingin dihapus?"
+                                                        wire:click="delete({{ $value->id }})">Hapus
+                                                    </button>
+                                                    <!--End Delete Button-->
 
-                                        </td>
-                                    </tr>
-                                    @empty
-                                    <td colspan="3" class="text-center">Data tidak ditemukan</td>
-                                    @endforelse
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <td colspan="3" class="text-center">Data tidak ditemukan</td>
+                                        @endforelse
                                 </tbody>
                                 <tfoot>
                                     {{ $kelas->links('pagination::bootstrap-4') }}
