@@ -50,7 +50,8 @@ Use Sidebar
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
                 {{-- {{\Illuminate\Support\Facades\Auth::Guru()->name}} --}}
-                {{-- {{ Auth::user()->guru->user }} --}}
+                {{\Illuminate\Support\Facades\Auth::guard('guru')->user()->nama_guru}}
+                {{\Illuminate\Support\Facades\Auth::guard('guru')->user()->matapelajaran->mata_pelajaran}}
             </div>
         </nav>
     </div>
