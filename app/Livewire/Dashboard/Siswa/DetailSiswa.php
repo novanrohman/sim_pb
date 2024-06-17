@@ -15,7 +15,6 @@ class DetailSiswa extends Component
     }
 
     public function edit($id){
-        // $this->dispatch('editSiswa', $id);
         return redirect()->route('editSiswa', ['id'=>$id]);
     }
 
