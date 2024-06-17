@@ -18,9 +18,8 @@ class Filter extends Component
 
     public function filter()
     {
-        // $this->dispatch('filtered', id_kelas:$this->selected);
+        //Parsing data
         $this->dispatch('filtered', id_kelas:$this->selected);
-        // dd($this->selected);
     }
     
     public function render()
@@ -29,3 +28,4 @@ class Filter extends Component
         return view('livewire.dashboard-guru.siswa.filter');
     }
 }
+

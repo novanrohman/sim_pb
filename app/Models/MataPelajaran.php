@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-//use Illuminate\Database\Eloquent\Model;
+
 use Illuminate\Foundation\Auth\User as Model;
 
 class MataPelajaran extends Model
@@ -17,6 +17,6 @@ class MataPelajaran extends Model
     
     public function guru()
     {
-        return $this->hasMany(Guru::class,'id_mapel');
+        return $this->hasMany(MataPelajaran::class,'id_mapel');
     }
 }

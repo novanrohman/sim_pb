@@ -39,11 +39,13 @@ Route::prefix('admin')->middleware('auth:web')->group(function () {
     Route::get('/presensi_siswa', App\Livewire\Dashboard\Siswa\PresensiSiswa::class)->name('presensiSiswa');
     Route::get('/rekap_siswa', App\Livewire\Dashboard\Siswa\RekapSiswa::class)->name('rekapSiswa');
     Route::get('/detail_siswa/{id}', App\Livewire\Dashboard\Siswa\DetailSiswa::class)->name('detailSiswa');
+    Route::get('/edit_siswa/{id}', App\Livewire\Dashboard\Siswa\EditSiswa::class)->name('editSiswa');
 
     // Guru
     Route::get('/data_guru', App\Livewire\Dashboard\Guru\DaftarGuru::class)->name('dataGuru');
     Route::get('/rekap_guru', App\Livewire\Dashboard\Guru\RekapGuru::class)->name('rekapGuru');
     Route::get('/detail_guru/{id}', App\Livewire\Dashboard\Guru\DetailGuru::class)->name('detailGuru');
+    Route::get('/edit_guru/{id}', App\Livewire\Dashboard\Guru\EditGuru::class)->name('editGuru');
 
     //Pegawai
     Route::get('/daftar_pegawai', App\Livewire\Dashboard\Pegawai\DaftarPegawai::class)->name('daftarPegawai');
