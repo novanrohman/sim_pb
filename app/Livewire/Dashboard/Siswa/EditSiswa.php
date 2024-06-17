@@ -18,8 +18,6 @@ class EditSiswa extends Component
         $this->siswa = Siswa::find($id);
         $this->kelas = Kelas::get();
         
-        // dd($this->kelas);
-
         if (!empty($id_kelas)) {
             $this->siswa = Siswa::where('id_kelas', $id_kelas)->get();
             
@@ -39,8 +37,6 @@ class EditSiswa extends Component
 
             $siswa->update($validate);
             return redirect(url('admin/daftar_siswa'))->with('success','Edit data berhasil');
-            // Siswa::update($validate)->where('$this->siswa->id', $this->siswa->id);
-            // dd($siswa);
     }
     public function render()
     {
