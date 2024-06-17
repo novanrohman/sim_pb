@@ -25,11 +25,11 @@
                         <i class="fas fa-table me-1"></i>
                         Presensi {{ date('Y/m/d') }}
                     </div>
-                    <div class="card-body">
+                    
                         {{-- Show List siswa --}}
                         @livewire('dashboard-guru.siswa.show-siswa')
                             
-                    </div>
+                    
                 </div>
             </div>
         </main>

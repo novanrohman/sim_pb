@@ -19,25 +19,25 @@ class ShowSiswa extends Component
         // $mapel = \Illuminate\Support\Facades\Auth::guard('guru')->user()->matapelajaran->mata_pelajaran;
         
         $guru = Auth::guard('guru')->user();
-        $mapel = $guru->matapelajaran->mata_pelajaran;
+        $mapel = $guru->matapelajaran->id;
 
-        // foreach ($this->presensi as $nis => $data) {
-        //     PresensiMapel::updateOrCreate(
-        //         ['nis' => $nis, 'mapel' => $mapel],
-        //         ['status' => $data['status']]
-        //     );
-        // }
+        foreach ($this->presensi as $nis => $data) {
+            PresensiMapel::Create(
+                ['nis' => $nis, 'mapel' => $mapel, 'status' => $data['status']],
+                
+            );
+        }
 
-        return view(dd($this->presensi));
+        // return view(dd($this->presensi, $mapel, ));
 
-        // session()->flash('message', 'Attendance saved successfully.');
+        session()->flash('success', 'Attendance saved successfully.');
         
         
     }
 
     //Mengambil data
     #[On('filtered')]
-    public function update($id_kelas)
+    public function updating($id_kelas)
     {
         //Check id_kelas
         if (!empty($id_kelas)) {
@@ -45,9 +45,10 @@ class ShowSiswa extends Component
             // check data siswas
             if($siswas != "[]"){
                 return $this->siswas = $siswas;
-            }else{
+            }
+            else{
                 $this->siswas=null;
-                return session()->flash('empty', 'Data belum ada');
+                // return session()->flash('empty', 'Data belum ada');
             }
         } 
         else{
