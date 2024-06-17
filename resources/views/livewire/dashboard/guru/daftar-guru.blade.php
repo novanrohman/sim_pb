@@ -20,40 +20,38 @@
                     <div class="card-body" wire:after="initializeDataTables">
                         <table id="" class="table table-striped">
                             <thead class="text-center">
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>NIP</th>
-                                <th>Telp</th>
-                                <th>Mapel</th>
-                                <th>Action</th>
-                            </tr>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>NIP</th>
+                                    <th>Telp</th>
+                                    <th>Mapel</th>
+                                    <th>Action</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <!--Data guru-->
-                            @forelse($gurus as $guru => $value)
-                                <tr class="text-center">
-                                    <td>{{$guru+1}}</td>
-                                    <td>{{$value['nama_guru']}}</td>
-                                    <td>{{$value['nip']}}</td>
-                                    <td>{{$value['telp_guru'] ??'Belum ada'}}</td>
-                                    <td>{{$value['mapel_name'] ??'Belum ada'}}</td>
-                                    <td>
-                                        <a wire:click="detailGuru({{$value['id']}})"
-                                           class="btn btn-primary"
-                                           type="button">Detail</a>
+                                <!--Data guru-->
+                                @forelse($gurus as $guru => $value)
+                                    <tr class="text-center">
+                                        <td>{{ $guru + 1 }}</td>
+                                        <td>{{ $value['nama_guru'] }}</td>
+                                        <td>{{ $value['nip'] }}</td>
+                                        <td>{{ $value['telp_guru'] ?? 'Belum ada' }}</td>
+                                        <td>{{ $value->matapelajaran->mata_pelajaran ?? 'Belum ada' }}</td>
+                                        <td>
+                                            <a wire:click="detailGuru({{ $value['id'] }})" class="btn btn-primary"
+                                                type="button">Detail</a>
 
-                                        <!--Delete Button-->
-                                        <button class="btn btn-outline-danger"
-                                                wire:confirm="Yakin ingin dihapus?"
-                                                wire:click="delete({{$value['id']}})">Hapus
-                                        </button>
-                                        <!--End Delete Button-->
+                                            <!--Delete Button-->
+                                            <button class="btn btn-outline-danger" wire:confirm="Yakin ingin dihapus?"
+                                                wire:click="delete({{ $value['id'] }})">Hapus
+                                            </button>
+                                            <!--End Delete Button-->
 
-                                    </td>
-                                </tr>
-                            @empty
-                            @endforelse
+                                        </td>
+                                    </tr>
+                                @empty
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
@@ -63,6 +61,3 @@
         @include('livewire.dashboard.component.footer')
     </div>
 </div>
-
-
-

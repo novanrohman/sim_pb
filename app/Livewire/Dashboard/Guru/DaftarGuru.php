@@ -21,11 +21,6 @@ class DaftarGuru extends Component
     {
         $this->gurus = Guru::all();
 
-        foreach ($this->gurus as $guru) {
-            $guru->mapel_name = MataPelajaran::find($guru->id_mapel)->mata_pelajaran;
-        }
-
-//        dd($guru->mapel_name);
     }
 
 
@@ -54,9 +49,6 @@ class DaftarGuru extends Component
 
     public function render()
     {
-//        $gurus = Guru::with('matapelajaran')->paginate(5);
-//        dd($gurus);
-//        return view('livewire.dashboard.guru.daftar-guru',compact('gurus'));
         return view('livewire.dashboard.guru.daftar-guru');
     }
 }
