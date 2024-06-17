@@ -5,32 +5,57 @@ namespace App\Livewire\DashboardGuru\Siswa;
 use App\Models\Siswa;
 use Livewire\Component;
 use Livewire\Attributes\On;
+use App\Models\PresensiMapel;
+
+use Illuminate\Support\Facades\Auth;
+use function PHPUnit\Framework\isEmpty;
 
 class ShowSiswa extends Component
 {
     public $siswas = null;
+    public $presensi = [];
     
-    
+    public function savePresensi(){
+        // $mapel = \Illuminate\Support\Facades\Auth::guard('guru')->user()->matapelajaran->mata_pelajaran;
+        
+        $guru = Auth::guard('guru')->user();
+        $mapel = $guru->matapelajaran->mata_pelajaran;
+
+        // foreach ($this->presensi as $nis => $data) {
+        //     PresensiMapel::updateOrCreate(
+        //         ['nis' => $nis, 'mapel' => $mapel],
+        //         ['status' => $data['status']]
+        //     );
+        // }
+
+        return view(dd($this->presensi));
+
+        // session()->flash('message', 'Attendance saved successfully.');
+        
+        
+    }
 
     //Mengambil data
     #[On('filtered')]
     public function update($id_kelas)
     {
+        //Check id_kelas
         if (!empty($id_kelas)) {
             $siswas = Siswa::where('id_kelas', $id_kelas)->get();
+            // check data siswas
+            if($siswas != "[]"){
+                return $this->siswas = $siswas;
+            }else{
+                $this->siswas=null;
+                return session()->flash('empty', 'Data belum ada');
+            }
         } 
-        // dd($siswas);
-        $this->siswas = $siswas;
-        
-    }
-
-    public function store(){
-        foreach (range(1,10) as $index) {
-        $this->validate([]);
+        else{
+            $this->siswas=null;
+            $siswas = session()->flash('error', 'Data tidak ditemukan, pilih kelas yang benar');
         }
-    }
-
-    
+        
+    }    
 
     public function render()
     {
