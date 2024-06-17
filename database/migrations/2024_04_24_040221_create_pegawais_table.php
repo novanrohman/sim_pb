@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pegawais', function (Blueprint $table) {
             $table->id();
-            $table->char('nip', length:20)->unique()->nullable();
+            $table->char('nip', 20)->unique();
             $table->string('nama_pegawai', length:50);
             $table->text('alamat_pegawai')->nullable();
             $table->char('telp_pegawai', length:15)->nullable();
