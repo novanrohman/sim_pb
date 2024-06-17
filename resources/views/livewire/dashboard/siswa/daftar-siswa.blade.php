@@ -20,39 +20,37 @@
                     <div class="card-body" wire:after="initializeDataTables">
                         <table id="" class="table table-striped">
                             <thead class="text-center">
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>NIS</th>
-                                <th>Kelas</th>
-                                <th>Action</th>
-                            </tr>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>NIS</th>
+                                    <th>Kelas</th>
+                                    <th>Action</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <!--Data siswa-->
-                            @forelse($siswas as $siswa => $value)
-                                <tr class="text-center">
-                                    <td>{{$siswa+1}}</td>
-                                    <td>{{$value['nama_siswa']}}</td>
-                                    <td>{{$value['nis']}}</td>
-                                    <td>{{$value->kelas->kelas??'Belum ada'}}</td>
-                                    <td>
-                                        <a wire:click="detailSiswa({{$value['id']}})"
-                                           class="btn btn-primary"
-                                           type="button">Detail</a>
+                                <!--Data siswa-->
+                                @forelse($siswas as $siswa => $value)
+                                    <tr class="text-center">
+                                        <td>{{ $siswa + 1 }}</td>
+                                        <td>{{ $value['nama_siswa'] }}</td>
+                                        <td>{{ $value['nis'] }}</td>
+                                        <td>{{ $value->kelas->kelas ?? 'Belum ada' }}</td>
+                                        <td>
+                                            <a wire:click="detailSiswa({{ $value['id'] }})" class="btn btn-primary"
+                                                type="button">Detail</a>
 
-                                        <!--Delete Button-->
-                                        <button class="btn btn-danger"
-                                                wire:confirm="Yakin ingin dihapus?"
-                                                wire:click="delete({{$value['id']}})">Hapus
-                                        </button>
-                                        <!--End Delete Button-->
+                                            <!--Delete Button-->
+                                            <button class="btn btn-danger" wire:confirm="Yakin ingin dihapus?"
+                                                wire:click="delete({{ $value['id'] }})">Hapus
+                                            </button>
+                                            <!--End Delete Button-->
 
-                                    </td>
-                                </tr>
-                            @empty
-                            @endforelse
-                            <!--End data siswa-->
+                                        </td>
+                                    </tr>
+                                @empty
+                                @endforelse
+                                <!--End data siswa-->
                             </tbody>
                         </table>
                     </div>

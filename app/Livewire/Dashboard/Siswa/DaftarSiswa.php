@@ -32,10 +32,5 @@ class DaftarSiswa extends Component
     {
         $this->siswas = Siswa::all();
 
-//        foreach ($this->gurus as $guru) {
-//            $guru->mapel_name = MataPelajaran::find($guru->id_mapel)->mata_pelajaran;
-//        }
-
-//        dd($guru->mapel_name);
     }
 }
