@@ -10,12 +10,17 @@ class DetailGuru extends Component
 {
 
     protected $guru;
+    public $mapel;
 
 
     public function mount($id)
     {
         $this->guru = Guru::find($id);
-        $this->mapel = MataPelajaran::find($this->guru['id_mapel']);
+        // $this->mapel = MataPelajaran::find($this->guru['id_mapel']);
+    }
+
+    public function edit($id){
+        return redirect()->route('editGuru', ['id'=>$id]);
     }
 
     public function render()
