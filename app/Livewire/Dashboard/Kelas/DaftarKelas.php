@@ -32,7 +32,7 @@ class DaftarKelas extends Component
         Kelas::find($id)->delete();
         
         session()->flash('delete','Data berhasil dihapus!');
-        return redirect()->route('mapel');
+        return redirect()->route('kelasDashboard');
         
     }
 

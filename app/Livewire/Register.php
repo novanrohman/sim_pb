@@ -12,7 +12,7 @@ class Register extends Component
     public $email;
     public $password;
 
-   
+
 
     public function render()
     {

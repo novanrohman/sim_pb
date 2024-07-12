@@ -51,7 +51,10 @@ Use Sidebar
                 <div class="small">Logged in as:</div>
                 {{-- {{\Illuminate\Support\Facades\Auth::Guru()->name}} --}}
                 {{\Illuminate\Support\Facades\Auth::guard('guru')->user()->nama_guru}}
+                @if(!empty(\Illuminate\Support\Facades\Auth::guard('guru')->user()->matapelajaran->mata_pelajaran))
                 {{\Illuminate\Support\Facades\Auth::guard('guru')->user()->matapelajaran->mata_pelajaran}}
+                    
+                @endif
             </div>
         </nav>
     </div>

@@ -22,7 +22,13 @@ Project SIM SMK Puspa Bangsa serta untuk memenuhi kebutuhan magang
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Teknologi
+- Livewire
 
+## Installation
+- make env file
+- copy env.example
+- php artisam migrate
+- php artisan serve
 
 
 ## Laravel Sponsors

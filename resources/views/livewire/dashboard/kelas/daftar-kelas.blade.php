@@ -70,8 +70,8 @@
                                                 </td>
                                                 <td>{{ $value->kelas }}</td>
                                                 <td>
-                                                    <a wire:click="detailEdit({{ '' }})"
-                                                        class="btn btn-primary" type="button">Edit</a>
+                                                    {{-- <a wire:click="detailEdit({{ '' }})"
+                                                        class="btn btn-primary" type="button">Edit</a> --}}
 
                                                     <!--Delete Button-->
                                                     <button class="btn btn-outline-danger"

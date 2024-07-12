@@ -16,7 +16,6 @@ class DetailGuru extends Component
     public function mount($id)
     {
         $this->guru = Guru::find($id);
-        // $this->mapel = MataPelajaran::find($this->guru['id_mapel']);
     }
 
     public function edit($id){

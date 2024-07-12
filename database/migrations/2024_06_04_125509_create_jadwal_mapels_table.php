@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('id_kelas')->unsigned()->nullable()->references('id')->on('kelas')->constrained()->onDelete('cascade');
             $table->foreignId('id_mapel')->unsigned()->nullable()->references('id')->on('mata_pelajarans')->constrained()->onDelete('cascade');
             $table->char('id_guru', length:20)->nullable();
+            $table->char('hari');
+            $table->time('jam');
             $table->timestamps();
             // $table->foreign('id_kelas')->references('id')->on('kelas')->constrained()->onDelete('cascade');
             // $table->foreign('id_mapel')->references('id')->on('mata_pelajarans')->constrained()->onDelete('cascade');
