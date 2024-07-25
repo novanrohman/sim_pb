@@ -53,7 +53,8 @@ class ShowSiswa extends Component
         } 
         else{
             $this->siswas=null;
-            $siswas = session()->flash('error', 'Data tidak ditemukan, pilih kelas yang benar');
+            $siswas = session()->flash
+            ('error', 'Data tidak ditemukan, pilih kelas yang benar');
         }
         
     }    

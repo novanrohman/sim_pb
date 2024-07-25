@@ -96,7 +96,7 @@
                                                         @foreach ($kelas as $value)
                                                             {{-- <option value="">{{ $value->kelas }}</option> --}}
                                                             <option value="{{ $value->id }}"
-                                                                {{ $value->id == $selectedKelas ? 'selected' : '' }}>{{$value->id. ' '. $value->kelas }}</option>
+                                                                {{ $value->id == $selectedKelas ? 'selected' : '' }}>{{ $value->kelas }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
